@@ -27,6 +27,7 @@ I spent the past year building Unclinq, a continuity-of-care product for therapi
 
 ## What it does
 
+0. **Session audio → transcript (optional).** Upload or record a session, or use the synthetic sample recording. Sarvam's Saaras model transcribes it with speaker diarization, in the original language, romanised, or translated to English. A small model labels which speaker is the clinician (with a question-count fallback), and the clinician can swap roles and fix misheard words before drafting. The audio is staged only for the length of the Sarvam job and then deleted.
 1. **Risk screen first, and it can't be skipped.** A deterministic lexicon (English and romanised Hindi) and a small-model classifier (Claude Haiku 4.5) each check the client's lines. If *either* fires, the session is flagged. Only a clinician can clear a flag.
 2. **The agent (Claude Sonnet 5.5, tool-calling)** does three things:
    - reads the client's profile and rules,
@@ -44,6 +45,7 @@ I spent the past year building Unclinq, a continuity-of-care product for therapi
 4. **The clinician approves, edits or rejects** each proposal. Approved items go to a mock outbox. Nothing is ever sent.
 
 ```
+[audio ─► Sarvam STT + diarization ─► clinician reviews transcript] ─►
 transcript ─► risk screen (lexicon ∥ Haiku classifier) ─► agent loop (Sonnet 5.5)
                     │ either fires → flag                     tools: get_client_profile
                     ▼                                                search_history  (RAG)
@@ -88,6 +90,8 @@ Labels are in `data/labels.json`.
 | Tools only *propose* | In care, the cost of a wrong automatic action (a message to the wrong person, a missed escalation) is far higher than one extra click. |
 | Risk screen runs before the agent, with "either fires" | A missed risk is the worst failure, so I trade some false alarms for recall. Two independent detectors fail differently. |
 | BM25, not embeddings, for now | Short clinical sentences, a small corpus, no extra vendor, and every hit is explainable. The `search_history` tool hides the method, so embeddings can be swapped in. |
+| The clinician reviews the transcript before drafting | Speech recognition mishears (in the sample, "walks" became "works"). Notes cite transcript lines, so the lines should be right first. |
+| Sarvam for speech | Built for Indian languages and code-mixed speech, with diarization in its batch API. I used it in production at Unclinq. |
 | Small model to screen, larger model to reason | The same cost split I used in Unclinq: the cheap classifier runs on every session, the agent only where reasoning is needed. |
 | Client rules live in data and are enforced in code | "Don't contact my wife" shouldn't depend on a prompt being followed. |
 
@@ -103,14 +107,16 @@ Labels are in `data/labels.json`.
 ```bash
 npm install
 echo "ANTHROPIC_API_KEY=sk-ant-..." > .env
-npm test            # 10 unit tests for the safety layer, no API key needed
+echo "SARVAM_API_KEY=..." >> .env   # only for the audio path
+npm test            # 15 unit tests (safety layer + audio handling), no API key needed
 npm run eval        # full pipeline on all 10 sessions (≈ $0.45)
 npm run dev         # http://localhost:3000
 npm run mcp         # MCP server over stdio
+npm run sample-audio  # regenerate the synthetic sample recording (needs SARVAM_API_KEY)
 ```
 
-Stack: TypeScript, Next.js (Vercel), `@anthropic-ai/sdk`, `@modelcontextprotocol/sdk`, Zod.
+Stack: TypeScript, Next.js (Vercel), `@anthropic-ai/sdk`, `sarvamai` (Saaras speech-to-text, Bulbul voices for the synthetic sample), `@modelcontextprotocol/sdk`, Zod.
 
 Privacy: pasted transcripts are processed in memory and never stored, server logs hold only ids and timings, and the API key stays server-side.
 
-**Synthetic data:** every client, clinician and session in `data/` is fictional and written for this demo. No real people, and nothing from any real product or user research.
+**Synthetic data:** the sample recording is transcript t03 voiced by two Sarvam text-to-speech voices. Every client, clinician and session in `data/` is fictional and written for this demo. No real people, and nothing from any real product or user research.

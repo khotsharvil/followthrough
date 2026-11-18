@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { RunResult } from "@/lib/agent";
 import type { Action } from "@/lib/verifier";
+import AudioPanel from "./AudioPanel";
 
 type Sample = { id: string; clientId: string; header: string; raw: string };
 type Person = { id: string; name: string; age: number; city: string; clinician: string; service: string; presenting: string; constraints: { channel: string; doNotMention: string[]; doNotContact: string[]; quietHours: string | null }; noteCount: number };
@@ -17,7 +18,8 @@ const TYPE_LABEL: Record<Action["type"], string> = {
 };
 
 export default function Workbench({ samples, clients }: { samples: Sample[]; clients: Person[] }) {
-  const [mode, setMode] = useState<"sample" | "paste">("sample");
+  const [mode, setMode] = useState<"sample" | "paste" | "audio">("sample");
+  const [audioClient, setAudioClient] = useState("c02");
   const [sampleId, setSampleId] = useState("t09");
   const [pasteClient, setPasteClient] = useState(clients[0].id);
   const [pasteText, setPasteText] = useState("");
@@ -31,7 +33,7 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
   const [editing, setEditing] = useState<number | null>(null);
 
   const sample = samples.find((s) => s.id === sampleId)!;
-  const clientId = mode === "sample" ? sample.clientId : pasteClient;
+  const clientId = mode === "sample" ? sample.clientId : mode === "audio" ? audioClient : pasteClient;
   const person = clients.find((c) => c.id === clientId)!;
 
   const reset = () => { setDecisions({}); setEdits({}); setEditing(null); setError(null); setHl([]); };
@@ -44,14 +46,14 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
     fetch(`/results/${sampleId}.json`).then((r) => (r.ok ? r.json() : null)).then((r) => { if (r) { setResult(r); setSource("saved"); } }).catch(() => {});
   }, [sampleId, mode]);
 
-  async function runLive() {
+  async function runLive(transcriptOverride?: string) {
     reset();
     setLoading(true);
     try {
       const res = await fetch("/api/run", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ clientId, transcript: mode === "sample" ? sample.raw : pasteText }),
+        body: JSON.stringify({ clientId, transcript: transcriptOverride ?? (mode === "sample" ? sample.raw : pasteText) }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Run failed");
@@ -85,7 +87,8 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
           <div className="pad">
             <div className="tabs" role="tablist">
               <button className={mode === "sample" ? "on" : ""} onClick={() => setMode("sample")}>Sample sessions</button>
-              <button className={mode === "paste" ? "on" : ""} onClick={() => { setMode("paste"); setResult(null); reset(); }}>Paste your own</button>
+              <button className={mode === "audio" ? "on" : ""} onClick={() => { setMode("audio"); setResult(null); setSource(null); reset(); }}>Session audio</button>
+              <button className={mode === "paste" ? "on" : ""} onClick={() => { setMode("paste"); setResult(null); setSource(null); reset(); }}>Paste text</button>
             </div>
             {mode === "sample" ? (
               <>
@@ -96,6 +99,8 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
                 </select>
                 <p className="meta">Saved results load instantly. "Run live" calls the model again (about 15–20s).</p>
               </>
+            ) : mode === "audio" ? (
+              <AudioPanel clients={clients} clientId={audioClient} setClientId={setAudioClient} onRun={(t) => runLive(t)} running={loading} />
             ) : (
               <>
                 <select value={pasteClient} onChange={(e) => setPasteClient(e.target.value)} aria-label="Client">
@@ -104,10 +109,10 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
                 <textarea style={{ marginTop: 8 }} value={pasteText} onChange={(e) => setPasteText(e.target.value)} placeholder={"One line per turn:\nT: How has the week been?\nC: Better, I slept more.\n\nUse synthetic text only."} />
               </>
             )}
-            <div className="row" style={{ marginTop: 10 }}>
-              <button className="btn" onClick={runLive} disabled={loading || (mode === "paste" && !pasteText.trim())}>{loading ? "Running…" : "Run live"}</button>
+            {mode !== "audio" && <div className="row" style={{ marginTop: 10 }}>
+              <button className="btn" onClick={() => runLive()} disabled={loading || (mode === "paste" && !pasteText.trim())}>{loading ? "Running…" : "Run live"}</button>
               {source && <span className="badge">{source === "saved" ? "showing saved run" : "live run"}</span>}
-            </div>
+            </div>}
             <div className="profile">
               <b>{person.name}</b>, {person.age}, {person.city} · {person.service}<br />
               Presenting: {person.presenting}<br />
@@ -120,7 +125,7 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
           </div>
         </div>
 
-        {mode === "sample" && (
+        {(mode === "sample" || (result && mode !== "paste")) && (
           <div className="panel">
             <h2>Transcript</h2>
             <div className="transcript" style={{ marginTop: 10 }}>
@@ -139,7 +144,7 @@ export default function Workbench({ samples, clients }: { samples: Sample[]; cli
       {/* Right: output */}
       <section className="stack">
         {error && <div className="error">{error}</div>}
-        {!result && !loading && !error && <div className="panel empty">{mode === "paste" ? "Paste a synthetic transcript and press Run live." : "Loading saved run…"}</div>}
+        {!result && !loading && !error && <div className="panel empty">{mode === "paste" ? "Paste a synthetic transcript and press Run live." : mode === "audio" ? "Transcribe a session recording, review the transcript, then draft the note and follow-ups." : "Loading saved run…"}</div>}
         {loading && <div className="panel empty">Screening for risk, searching past notes, drafting the note and follow-ups, then verifying every citation…</div>}
 
         {result && !loading && (

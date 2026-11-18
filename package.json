@@ -10,7 +10,8 @@
     "eval": "tsx evals/run.ts",
     "test": "tsx --test tests/*.test.ts",
     "mcp": "tsx mcp/server.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sample-audio": "tsx --env-file=.env scripts/make-sample-audio.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.10.0",
@@ -18,6 +19,7 @@
     "next": "^16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "sarvamai": "^1.1.8",
     "zod": "^4.6.7"
   },
   "devDependencies": {
