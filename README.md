@@ -4,7 +4,7 @@
 
 Live demo: **https://followthrough-amaha.vercel.app** · Evals: **/evals** · All data is synthetic.
 
-Built by Sharvil Khot for Amaha's AI Engineer application, under the "your own idea" option.
+Built by Sharvil Khot for Amaha's AI Engineer application, under the "your own idea" option. Overview of my work: **https://sharvil-for-amaha.vercel.app/ai-engineer/**
 
 ---
 
@@ -101,6 +101,14 @@ Labels are in `data/labels.json`.
 2. **Plug into real workflows.** Proposals become tasks in the actual booking and messaging systems, behind the same approval step, through MCP or integrations.
 3. **Handoffs between services.** The same cited-brief pattern for a therapist → psychiatrist referral, or a hospital discharge → outpatient therapist, where context gets lost today.
 4. **More languages.** Retrieval and the risk lexicon extended to more Indian languages, with each language's risk phrases reviewed by clinicians.
+
+## Before this: Unclinq
+
+For the past year I've built and run **Unclinq**, an AI continuity-of-care platform for therapists: session recording and transcription, AI session notes, a 30-second pre-session briefing, assigned homework, and a client companion with WhatsApp check-ins. Its core AI engine is private because it's a live product, so Followthrough is the open, inspectable slice built for this application.
+
+- Therapist dashboard demo (sample data): https://khotsharvil.github.io/unclinq-demo/
+- Production modules (field-level encryption, speaker labelling from loudness): https://github.com/khotsharvil/unclinq-showcase
+- Product: https://clinic.unclinq.com
 
 ## Run it
 
