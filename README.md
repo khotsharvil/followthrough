@@ -4,7 +4,7 @@
 
 Live demo: **https://followthrough-amaha.vercel.app** · Evals: **/evals** · All data is synthetic.
 
-Built by Sharvil Khot for Amaha's AI Engineer application, under the "your own idea" option. Overview of my work: **https://sharvil-for-amaha.vercel.app/ai-engineer/**
+Built by Sharvil Khot for Amaha's AI Engineer application, under the "your own idea" option. Overview of my work: **https://sharvil-amaha-ai.vercel.app**
 
 ---
 
