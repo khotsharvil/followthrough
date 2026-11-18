@@ -1,5 +1,7 @@
 # Followthrough
 
+**Followthrough is the after-session workflow of [Unclinq](https://khotsharvil.github.io/unclinq-demo/), my AI product for therapists, rebuilt from scratch in the open.** The problem I picked: care breaks down between and after sessions.
+
 **After a therapy session, Followthrough drafts the clinician's note and the follow-up work. It writes nothing it can't cite, sends nothing without the clinician's approval, and puts risk first.**
 
 Live demo: **https://followthrough-amaha.vercel.app** · Evals: **/evals** · All data is synthetic.
