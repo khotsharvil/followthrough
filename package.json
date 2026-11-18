@@ -1,0 +1,30 @@
+{
+  "name": "followthrough",
+  "version": "0.1.0",
+  "private": true,
+  "description": "After a therapy session: a cited note, proposed follow-ups, and risk surfaced first. Synthetic data only.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "eval": "tsx evals/run.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "mcp": "tsx mcp/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "type": "module"
+}

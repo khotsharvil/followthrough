@@ -1,0 +1,25 @@
+# SYNTHETIC SESSION. Fictional client c02 (Rohan M.), session 2026-10-12. Not a real person.
+T: Rohan, welcome back. It's been two weeks. How have things been at home?
+C: Better with my partner. The shared feed schedule is working. I get two nights of proper sleep now.
+T: That's a big change. How's your mood on those days?
+C: Less flat. I'd say five out of ten instead of three.
+T: Did you manage the walks with your daughter?
+C: Three times last week. She falls asleep in the carrier, it's nice.
+T: That sounds like a good moment. Anything that got in the way of the walks?
+C: Rain, mostly. And work calls.
+T: Could an indoor version count on rainy days?
+C: Maybe playing music with her in the evening. She likes that.
+T: Let's count that. Now, last time you mentioned the psychiatry follow-up. Did that happen?
+C: No, I missed it. I had a work trip and forgot to reschedule.
+T: Okay. How have you been finding the medicine?
+C: I feel a bit dizzy in the mornings. I was thinking of just stopping it.
+T: That's important to tell Dr. K. I can't advise on the medication myself, but I'd like you to talk to Dr. K. before changing anything. Would it help if we booked that follow-up now?
+C: Yes, please. Evenings only, though.
+T: I'll ask the team to find an evening slot with Dr. K. this week and send it to you by SMS.
+C: Thanks.
+T: How about the conflict script, did you use it again?
+C: Once. It went okay. I forgot the "what I need" part.
+T: That's often the hardest part. For this fortnight, try it once more and finish with the need, even a small one.
+C: Fine.
+T: Same time in two weeks, evening?
+C: Yes.

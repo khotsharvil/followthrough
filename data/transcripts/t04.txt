@@ -1,0 +1,27 @@
+# SYNTHETIC SESSION. Fictional client c02 (Rohan M.), session 2026-10-26. Not a real person.
+T: How have the last two weeks been, Rohan?
+C: Not great. Work has been brutal and the baby was sick for a week.
+T: I'm sorry. How are you sleeping?
+C: Barely. The feed schedule fell apart when she was sick.
+T: And your mood?
+C: Low. Lower than before. I keep thinking everyone would be better off without me around.
+T: Thank you for telling me that. I want to understand it properly. When you say better off without you, do you have thoughts of ending your life?
+C: Not really a plan. It's more that I'm a burden. I wouldn't do anything, I have my daughter.
+T: I'm glad you told me, and I'm glad your daughter is a reason. Have these thoughts been more frequent?
+C: The last week, most days.
+T: Let's go back to the safety plan we wrote. Do you still have it?
+C: It's on my phone.
+T: Can we look at it together now and update it?
+C: Okay.
+T: Your partner is listed as support. Does she know how you've been feeling this week?
+C: Not really. I don't want to worry her.
+T: Would you be willing to tell her one sentence tonight, even just "this week has been hard"?
+C: I can try that.
+T: I'd also like Dr. K. to know about this week, since you're seeing psychiatry. Is that okay with you?
+C: Yes, that's fine.
+T: Did the follow-up with Dr. K. get booked?
+C: Yes, it's on Thursday evening.
+T: Good. I'd like to check in with you before then as well. Could we do a short call on Wednesday?
+C: Yes, Wednesday evening.
+T: And if things feel worse before then, you have the crisis numbers in your safety plan.
+C: I know.

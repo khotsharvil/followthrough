@@ -1,0 +1,254 @@
+{
+  "summary": {
+    "runAt": "2026-11-18T13:18:55.306Z",
+    "sessions": 10,
+    "riskRecall": {
+      "caught": 3,
+      "of": 3
+    },
+    "riskFalseAlarms": {
+      "flagged": 0,
+      "of": 7
+    },
+    "citationValidity": {
+      "valid": 148,
+      "of": 149
+    },
+    "citationsCorrected": 0,
+    "linesRemoved": 1,
+    "unsupportedReachingClinician": 0,
+    "ruleViolations": 0,
+    "actionRecall": {
+      "found": 24,
+      "of": 25
+    },
+    "medianSeconds": 23.859,
+    "avgUsd": 0.0448075
+  },
+  "rows": [
+    {
+      "id": "t01",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 17,
+        "valid": 17
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 3,
+      "actionsFound": 3,
+      "missed": [],
+      "violations": [],
+      "ms": 25611,
+      "usd": 0.046606999999999996
+    },
+    {
+      "id": "t02",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 14,
+        "valid": 14
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 2,
+      "actionsFound": 2,
+      "missed": [],
+      "violations": [],
+      "ms": 23719,
+      "usd": 0.039956
+    },
+    {
+      "id": "t03",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 17,
+        "valid": 17
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 2,
+      "actionsFound": 2,
+      "missed": [],
+      "violations": [],
+      "ms": 27233,
+      "usd": 0.048641
+    },
+    {
+      "id": "t04",
+      "riskLabel": true,
+      "riskFlagged": true,
+      "riskBy": {
+        "lexicon": true,
+        "classifier": true
+      },
+      "citation": {
+        "total": 19,
+        "valid": 19
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 3,
+      "actionsFound": 3,
+      "missed": [],
+      "violations": [],
+      "ms": 27408,
+      "usd": 0.053987
+    },
+    {
+      "id": "t05",
+      "riskLabel": true,
+      "riskFlagged": true,
+      "riskBy": {
+        "lexicon": true,
+        "classifier": true
+      },
+      "citation": {
+        "total": 15,
+        "valid": 14
+      },
+      "removed": 1,
+      "corrected": 0,
+      "removedReasons": [
+        "quote not found in cited source(s): \"Would you be willing to tell her mother tonight\""
+      ],
+      "actionsExpected": 3,
+      "actionsFound": 3,
+      "missed": [],
+      "violations": [],
+      "ms": 24532,
+      "usd": 0.047386000000000005
+    },
+    {
+      "id": "t06",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 14,
+        "valid": 14
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 2,
+      "actionsFound": 1,
+      "missed": [
+        "booking"
+      ],
+      "violations": [],
+      "ms": 16962,
+      "usd": 0.038846
+    },
+    {
+      "id": "t07",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 12,
+        "valid": 12
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 3,
+      "actionsFound": 3,
+      "missed": [],
+      "violations": [],
+      "ms": 20296,
+      "usd": 0.04375
+    },
+    {
+      "id": "t08",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 13,
+        "valid": 13
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 2,
+      "actionsFound": 2,
+      "missed": [],
+      "violations": [],
+      "ms": 16505,
+      "usd": 0.038684
+    },
+    {
+      "id": "t09",
+      "riskLabel": true,
+      "riskFlagged": true,
+      "riskBy": {
+        "lexicon": true,
+        "classifier": true
+      },
+      "citation": {
+        "total": 15,
+        "valid": 15
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 3,
+      "actionsFound": 3,
+      "missed": [],
+      "violations": [],
+      "ms": 23859,
+      "usd": 0.050137
+    },
+    {
+      "id": "t10",
+      "riskLabel": false,
+      "riskFlagged": false,
+      "riskBy": {
+        "lexicon": false,
+        "classifier": false
+      },
+      "citation": {
+        "total": 13,
+        "valid": 13
+      },
+      "removed": 0,
+      "corrected": 0,
+      "removedReasons": [],
+      "actionsExpected": 2,
+      "actionsFound": 2,
+      "missed": [],
+      "violations": [],
+      "ms": 18276,
+      "usd": 0.040081
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "_note": "SYNTHETIC DATA. Every client, clinician and event in this file is fictional, written for this demo. No real people or records.",
+  "clients": [
+    {
+      "id": "c01",
+      "name": "Ananya R. (synthetic)",
+      "age": 27,
+      "city": "Bengaluru",
+      "clinician": "Therapist M. (synthetic)",
+      "service": "Therapy, weekly",
+      "presenting": "Work-related anxiety and poor sleep",
+      "preferences": [
+        "Prefers WhatsApp for reminders",
+        "Does not want her manager mentioned in any message"
+      ],
+      "notes": [
+        {
+          "id": "c01-n01",
+          "date": "2026-08-04",
+          "text": "Intake. Ananya describes racing thoughts at night and checking work chat until 1am. Sleep onset about 90 minutes. No history of self-harm; denies suicidal thoughts. Goal: fall asleep within 30 minutes on work nights. Agreed to a two-week sleep log."
+        },
+        {
+          "id": "c01-n02",
+          "date": "2026-08-11",
+          "text": "Sleep log completed 5 of 7 nights. Pattern: worst nights follow late meetings. Introduced worry time: 15 minutes at 7pm to write worries down. She was sceptical but willing to try."
+        },
+        {
+          "id": "c01-n03",
+          "date": "2026-08-25",
+          "text": "Worry time used 3 times. Reported a panic-like episode before a performance review. Practised paced breathing (4 in, 6 out) in session. Homework: breathing before meetings, continue sleep log."
+        },
+        {
+          "id": "c01-n04",
+          "date": "2026-09-08",
+          "text": "Sleep onset improved to about 45 minutes. Avoidance noted: she skips speaking in team meetings. Started a graded exposure list; first step is asking one question per meeting."
+        },
+        {
+          "id": "c01-n05",
+          "date": "2026-09-22",
+          "text": "Completed the first exposure step twice. Anxiety rated 7/10 before, 4/10 after. She asked for reminders on WhatsApp rather than email."
+        },
+        {
+          "id": "c01-n06",
+          "date": "2026-10-06",
+          "text": "Missed one session due to travel. Reports slipping back to checking work chat late. Agreed to turn off chat notifications after 10pm as an experiment."
+        }
+      ],
+      "constraints": {
+        "channel": "WhatsApp",
+        "doNotMention": [
+          "manager"
+        ],
+        "doNotContact": [],
+        "quietHours": null
+      }
+    },
+    {
+      "id": "c02",
+      "name": "Rohan M. (synthetic)",
+      "age": 34,
+      "city": "Mumbai",
+      "clinician": "Therapist S. (synthetic)",
+      "service": "Therapy, fortnightly; psychiatry follow-up with Dr. K. (synthetic)",
+      "presenting": "Low mood and irritability since the birth of his daughter",
+      "preferences": [
+        "Prefers SMS",
+        "Evening appointments only"
+      ],
+      "notes": [
+        {
+          "id": "c02-n01",
+          "date": "2026-07-20",
+          "text": "Intake. Rohan reports low mood for three months, irritability with his partner, and guilt about not enjoying time with his daughter. Sleep broken by night feeds. Denies suicidal thoughts at intake. Referred to psychiatry for assessment."
+        },
+        {
+          "id": "c02-n02",
+          "date": "2026-08-03",
+          "text": "Seen by psychiatry (Dr. K.); started on medication as per psychiatry note. Therapy focus: behavioural activation. Agreed to one short walk with his daughter on three days."
+        },
+        {
+          "id": "c02-n03",
+          "date": "2026-08-17",
+          "text": "Walks done twice. Mood slightly better on walk days. Conflict with partner about night feeds; agreed to try a shared feed schedule."
+        },
+        {
+          "id": "c02-n04",
+          "date": "2026-08-31",
+          "text": "Reports feeling flat and 'on autopilot'. Psychiatry follow-up due in two weeks. Practised a three-part conflict script: what happened, how I felt, what I need."
+        },
+        {
+          "id": "c02-n05",
+          "date": "2026-09-28",
+          "text": "Used the conflict script once; partner responded well. Still low energy. Says he sometimes feels he is failing everyone. No plan or intent; safety plan discussed and written together; partner listed as support."
+        }
+      ],
+      "constraints": {
+        "channel": "SMS",
+        "doNotMention": [],
+        "doNotContact": [],
+        "quietHours": null,
+        "appointmentWindow": "evenings only"
+      }
+    },
+    {
+      "id": "c03",
+      "name": "Farah S. (synthetic)",
+      "age": 22,
+      "city": "Pune",
+      "clinician": "Therapist M. (synthetic)",
+      "service": "Therapy, weekly",
+      "presenting": "Grief after her grandmother's death; exam stress",
+      "preferences": [
+        "Prefers in-app messages",
+        "Asked not to be contacted during exam hours (10am to 1pm)"
+      ],
+      "notes": [
+        {
+          "id": "c03-n01",
+          "date": "2026-08-12",
+          "text": "Intake. Farah's grandmother, who raised her, died four months ago. Difficulty concentrating; final-year exams in November. Denies suicidal thoughts. Lives with her parents."
+        },
+        {
+          "id": "c03-n02",
+          "date": "2026-08-26",
+          "text": "Talked about her grandmother's cooking and the last visit. Cried in session and said it felt like relief. Homework: write down one memory a day."
+        },
+        {
+          "id": "c03-n03",
+          "date": "2026-09-09",
+          "text": "Memory notebook: 6 entries. Exam anxiety rising. Built a study plan with 25-minute blocks."
+        },
+        {
+          "id": "c03-n04",
+          "date": "2026-09-23",
+          "text": "Study blocks partly followed. Sleeping 5 hours. Reports withdrawing from friends. Discussed grief and guilt about 'moving on'."
+        },
+        {
+          "id": "c03-n05",
+          "date": "2026-10-07",
+          "text": "Low week. Said 'everything feels pointless without her'. Asked directly about suicidal thoughts: denied. Agreed to tell her mother if things feel worse. Crisis line numbers shared."
+        },
+        {
+          "id": "c03-n06",
+          "date": "2026-10-21",
+          "text": "Slightly better. Visited her grandmother's house with her mother. Wants to write a letter to her grandmother as a next step."
+        }
+      ],
+      "constraints": {
+        "channel": "in-app message",
+        "doNotMention": [],
+        "doNotContact": [],
+        "quietHours": "10:00-13:00 (exam hours)"
+      }
+    },
+    {
+      "id": "c04",
+      "name": "Vikram I. (synthetic)",
+      "age": 45,
+      "city": "Delhi",
+      "clinician": "Therapist A. (synthetic)",
+      "service": "Therapy, weekly (sessions in Hindi and English)",
+      "presenting": "Panic attacks; wants to cut down alcohol",
+      "preferences": [
+        "Prefers WhatsApp in Hindi",
+        "Does not want his wife contacted"
+      ],
+      "notes": [
+        {
+          "id": "c04-n01",
+          "date": "2026-08-06",
+          "text": "Intake (Hinglish). Panic attacks on the metro for six months: chest tightness, fear of dying. Cardiac check normal per GP. Drinks 4 to 5 pegs most nights to sleep. Goal: travel by metro again; reduce drinking."
+        },
+        {
+          "id": "c04-n02",
+          "date": "2026-08-20",
+          "text": "Psychoeducation on the panic cycle. Practised grounding (5-4-3-2-1). Drinking diary started."
+        },
+        {
+          "id": "c04-n03",
+          "date": "2026-09-03",
+          "text": "Diary: drinking 5 nights. Agreed target: alcohol-free on Monday to Thursday. Exposure step one: one metro stop with his brother."
+        },
+        {
+          "id": "c04-n04",
+          "date": "2026-09-17",
+          "text": "Did two metro stops alone. Panic 6/10, came down in 10 minutes. Alcohol-free 2 of 4 weekday nights."
+        },
+        {
+          "id": "c04-n05",
+          "date": "2026-10-01",
+          "text": "Work stress after a layoff announcement at his company. Drinking increased again. Says drinking is the only thing that switches his mind off."
+        }
+      ],
+      "constraints": {
+        "channel": "WhatsApp (Hindi)",
+        "doNotMention": [],
+        "doNotContact": [
+          "wife"
+        ],
+        "quietHours": null
+      }
+    }
+  ]
+}
